@@ -83,7 +83,7 @@
     <div class="pill" id="h-score" style="display:none;color:#ffd93d">⭐ 0</div>
     <div class="pill" id="h-cat" style="display:none">🐱 0/10</div>
     <div id="wicons"></div>
-    <button id="btn-pause">⏸</button>
+    <button id="btn-hub" title="여행지 선택">🗺️</button><button id="btn-pause">⏸</button>
     <button id="btn-fs" title="전체화면">⛶</button>
   </div></div>
   <div id="wave-banner"><span id="wave-text"></span></div>
@@ -148,7 +148,7 @@
     <h2 id="t-pausetitle">⏸ 일시정지</h2>
     <p class="sub" id="t-pausesub">잠시 쉬는 중...</p>
     <button class="pxbtn" id="btn-resume">계속하기</button><br><br>
-    <button class="pxbtn" id="btn-quit" style="background:linear-gradient(180deg,#8a93ad,#5a637e);box-shadow:0 6px 0 #383f55,0 10px 24px rgba(0,0,0,.4);font-size:15px;padding:10px 30px">그만하기</button>
+    <button class="pxbtn" id="btn-quit" style="background:linear-gradient(180deg,#8a93ad,#5a637e);box-shadow:0 6px 0 #383f55,0 10px 24px rgba(0,0,0,.4);font-size:15px;padding:10px 30px">그만하기</button><br><br><button class="pxbtn" id="btn-gohub" style="background:linear-gradient(180deg,#7fd4ff,#3d9be0);box-shadow:0 6px 0 #246a9e,0 10px 24px rgba(0,0,0,.4);font-size:15px;padding:10px 30px">🗺️ 여행지 선택</button>
   </div></div>
 </div>
 <script>
@@ -2413,6 +2413,7 @@ document.getElementById('cv').addEventListener('pointerdown',()=>{if(state==='in
 $('btn-start-ta').onclick=()=>{beep(520,0.1,'square',0.05);startGame('timeattack');};
 $('btn-start-sv').onclick=()=>{beep(520,0.1,'square',0.05);startGame('survival');};
 $('btn-again').onclick=()=>{startGame();};
+$('btn-hub').onclick=()=>{location.href='index.html';};
 $('btn-pause').onclick=()=>togglePause();
 $('btn-fs').onclick=()=>toggleFS();
 function toggleFS(){
@@ -2430,6 +2431,7 @@ $('btn-save-sv').onclick=()=>{saveSurvivalImage();};
 $('btn-again2').onclick=()=>{beep(520,0.1,'square',0.05);startGame(gameMode);};
 applyLang();
 $('btn-resume').onclick=()=>togglePause();
+$('btn-gohub').onclick=()=>{location.href='index.html';};
 $('btn-quit').onclick=()=>{$('ov-pause').classList.add('hidden');showTitle();};
 
 /* ---------- main loop ---------- */

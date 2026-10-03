@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>대구 서바이벌</title>
+<title>대전 서바이벌</title>
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="대구 서바이벌">
+<meta name="apple-mobile-web-app-title" content="대전 서바이벌">
 <meta name="theme-color" content="#0b1020">
-<meta name="description" content="좀비 비둘기 무리가 몰려온다! 후더덕과 함께 대구 여행에서 살아남아라">
+<meta name="description" content="좀비 비둘기 무리가 몰려온다! 후더덕과 함께 대전 여행에서 살아남아라">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
@@ -92,15 +92,15 @@
 
   <div class="ov" id="ov-title"><div class="card">
     <img class="titleart" id="title-img" alt="후더덕 서바이벌">
-    <h1 id="t-title">대구 서바이벌</h1>
-    <p class="sub" id="t-sub">좀비 비둘기 무리가 몰려온다!<br>후더덕과 함께 대구 여행에서 살아남아라 🦆🍗</p>
+    <h1 id="t-title">대전 서바이벌</h1>
+    <p class="sub" id="t-sub">좀비 비둘기 무리가 몰려온다!<br>후더덕과 함께 대전 여행에서 살아남아라 🦆🍗</p>
     <div class="howto" id="t-howto">
       🕹️ <b>이동:</b> WASD / 방향키 / 화면 드래그(조이스틱)<br>
-      🍗 <b>공격:</b> 자동! 대구 명물 무기 7종으로 싸워요<br>
+      🍗 <b>공격:</b> 자동! 대전 명물 무기 7종으로 싸워요<br>
       💎 <b>성장:</b> 기념품 젬을 모아 레벨업 → 3장 중 1장 선택<br>
       👹 <b>보스:</b> 90초마다 비둘기왕 출현!<br>
       🍗 <b>아이템:</b> 치킨·뭉티기(체력 회복), 자석(젬 흡수)<br>
-      🗺️ <b>여행지:</b> 대구역→동성로→서문시장→수성못→83타워→라이온즈파크
+      🗺️ <b>여행지:</b> 대전역→성심당→꿈돌이→엑스포→한빛탑→이글스파크
     </div>
     <div id="lang-sw"><button id="lang-ko" class="langbtn">한국어</button><button id="lang-ja" class="langbtn">日本語</button></div>
     <button class="pxbtn" id="btn-start-ta" style="margin-bottom:10px">🏆 타임어택 (2분)</button><br>
@@ -280,19 +280,368 @@ const decor=[];
 })();
 const pond={x:WORLD_W*0.72,y:WORLD_H*0.3,rx:150,ry:95};
 const LANDMARKS=[
-  {f:'station',x:420,y:260,label:'🚉 대구역',lja:'🚉 大邱駅',beneCd:0},
-  {f:'torii',x:1330,y:350,label:'🏃 동성로',lja:'🏃 東城路',beneCd:0},
-  {f:'shrine',x:1400,y:1000,label:'🙏 팔공산 갓바위',lja:'🙏 八公山石仏',beneCd:0,br:300,cr:400,sy:120},
-  {f:'yatai',x:2030,y:860,label:'🏮 서문시장',lja:'🏮 西門市場',beneCd:0},
-  {f:'castle',x:540,y:1500,label:'🏯 달성토성',lja:'🏯 達城土城',beneCd:0},
-  {f:'retro',x:2130,y:1660,label:'🚂 근대골목',lja:'🚂 近代路地',beneCd:0},
-  {f:'school',x:1380,y:1920,label:'🎓 계명대',lja:'🎓 啓明大学',beneCd:0},
-  {f:'tower',x:1960,y:380,label:'🗼 83타워',lja:'🗼 83タワー',beneCd:0},
-  {f:'canal',x:900,y:1050,label:'🎡 이월드',lja:'🎡 イーワールド',beneCd:0,br:170,cr:300,sy:90},
-  {f:'kushida',x:2320,y:1230,label:'🔥 대프리카',lja:'🔥 テグリカ',beneCd:0},
-  {f:'ohori',x:1150,y:1450,label:'🌳 수성못',lja:'🌳 寿城池',beneCd:0},
-  {f:'lions',x:2450,y:300,label:'⚾ 라이온즈파크',lja:'⚾ ライオンズパーク',beneCd:0},
+  {f:'daejeonst',x:420,y:260,label:'🚂 대전역',lja:'🚂 大田駅',beneCd:0,br:200,cr:350},
+  {f:'sungsimdang',x:1330,y:350,label:'🍞 성심당',lja:'🍞 聖心堂',beneCd:0,br:200,cr:350},
+  {f:'kkumdori',x:1400,y:1000,label:'🦫 꿈돌이',lja:'🦫 クムドリ',beneCd:0,br:300,cr:450,sy:120},
+  {f:'expo',x:2030,y:860,label:'🔬 엑스포과학공원',lja:'🔬 エキスポ科学公園',beneCd:0},
+  {f:'hanbat',x:540,y:1500,label:'🌳 한밭수목원',lja:'🌳 ハンバッ樹木園',beneCd:0},
+  {f:'dunsan',x:2130,y:1660,label:'🏙️ 둔산동',lja:'🏙️ 屯山洞',beneCd:0},
+  {f:'kyowondae',x:1380,y:1920,label:'🎓 교원대',lja:'🎓 教員大',beneCd:0},
+  {f:'hanbit',x:1960,y:380,label:'🗼 한빛탑',lja:'🗼 ハンビッタワー',beneCd:0},
+  {f:'yuseong',x:900,y:1050,label:'♨️ 유성온천',lja:'♨️ 儒城温泉',beneCd:0,br:170,cr:300,sy:90},
+  {f:'expobridge',x:2320,y:1230,label:'🌉 엑스포다리',lja:'🌉 エキスポ大橋',beneCd:0},
+  {f:'daecheong',x:1150,y:1450,label:'🌊 대청호',lja:'🌊 大清湖',beneCd:0},
+  {f:'eagles',x:2450,y:300,label:'⚾ 이글스파크',lja:'⚾ イーグルスパーク',beneCd:0,br:200,cr:400},
 ];
+
+/* ===== 대전 랜드마크 ===== */
+function drawKkumdori(px,py,t){
+  // 거대 꿈돌이 마스코트 (대전의 상징)
+  ctx.save();ctx.translate(px,py);
+  // 그림자
+  ctx.fillStyle='rgba(0,0,0,.18)';
+  ctx.beginPath();ctx.ellipse(0,95,150,28,0,0,TAU);ctx.fill();
+  // 몸통 (둥글고 귀여운)
+  const bob=Math.sin(t/300)*6;
+  ctx.fillStyle=gradC(0,0,20,120,'#7ec8f7','#3d9be0');
+  ctx.beginPath();ctx.arc(0,bob,110,0,TAU);ctx.fill();
+  ctx.strokeStyle='#fff';ctx.lineWidth=8;
+  ctx.beginPath();ctx.arc(0,bob,110,0,TAU);ctx.stroke();
+  // 배 (흰색)
+  ctx.fillStyle='#fff';
+  ctx.beginPath();ctx.ellipse(0,40+bob,62,48,0,0,TAU);ctx.fill();
+  // 귀 (둥근)
+  ctx.fillStyle='#3d9be0';
+  ctx.beginPath();ctx.arc(-72,-72+bob,28,0,TAU);ctx.fill();
+  ctx.beginPath();ctx.arc(72,-72+bob,28,0,TAU);ctx.fill();
+  ctx.fillStyle='#7ec8f7';
+  ctx.beginPath();ctx.arc(-72,-72+bob,14,0,TAU);ctx.fill();
+  ctx.beginPath();ctx.arc(72,-72+bob,14,0,TAU);ctx.fill();
+  // 얼굴
+  ctx.fillStyle='#222';
+  ctx.beginPath();ctx.arc(-34,-18+bob,11,0,TAU);ctx.fill();
+  ctx.beginPath();ctx.arc(34,-18+bob,11,0,TAU);ctx.fill();
+  ctx.fillStyle='#fff';
+  ctx.beginPath();ctx.arc(-31,-21+bob,3.5,0,TAU);ctx.fill();
+  ctx.beginPath();ctx.arc(37,-21+bob,3.5,0,TAU);ctx.fill();
+  // 볼터치
+  ctx.fillStyle='rgba(255,150,180,.6)';
+  ctx.beginPath();ctx.arc(-58,2+bob,13,0,TAU);ctx.fill();
+  ctx.beginPath();ctx.arc(58,2+bob,13,0,TAU);ctx.fill();
+  // 미소
+  ctx.strokeStyle='#222';ctx.lineWidth=5;ctx.lineCap='round';
+  ctx.beginPath();ctx.arc(0,8+bob,26,0.4,Math.PI-0.4);ctx.stroke();
+  // 머리 위 별 장식
+  ctx.save();ctx.translate(0,-118+bob);ctx.rotate(Math.sin(t/400)*0.2);
+  ctx.fillStyle='#ffd93d';
+  ctx.beginPath();
+  for(let i=0;i<5;i++){
+    const a=-Math.PI/2+i*TAU/5, a2=a+TAU/10;
+    ctx.lineTo(Math.cos(a)*22,Math.sin(a)*22);
+    ctx.lineTo(Math.cos(a2)*9,Math.sin(a2)*9);
+  }
+  ctx.closePath();ctx.fill();
+  ctx.restore();
+  // 팻말
+  ctx.fillStyle='#fff';RR(-90,118,180,44,22);ctx.fill();
+  ctx.strokeStyle='#3d9be0';ctx.lineWidth=4;RR(-90,118,180,44,22);ctx.stroke();
+  ctx.fillStyle='#3d9be0';ctx.font='bold 24px sans-serif';ctx.textAlign='center';
+  ctx.fillText('🦫 꿈돌이',0,148);
+  ctx.restore();
+}
+function drawEaglesPark(px,py,t){
+  // 초대형 이글스파크 야구장
+  ctx.save();ctx.translate(px,py);
+  ctx.fillStyle='rgba(0,0,0,.15)';
+  ctx.beginPath();ctx.ellipse(0,60,220,40,0,0,TAU);ctx.fill();
+  // 외야 잔디 (타원)
+  ctx.fillStyle='#5da24e';
+  ctx.beginPath();ctx.ellipse(0,20,200,110,0,0,TAU);ctx.fill();
+  ctx.strokeStyle='#fff';ctx.lineWidth=6;
+  ctx.beginPath();ctx.ellipse(0,20,200,110,0,0,TAU);ctx.stroke();
+  // 내야 (다이아몬드)
+  ctx.fillStyle='#c9a86a';
+  ctx.beginPath();
+  ctx.moveTo(0,90);ctx.lineTo(70,20);ctx.lineTo(0,-50);ctx.lineTo(-70,20);
+  ctx.closePath();ctx.fill();
+  ctx.strokeStyle='#fff';ctx.lineWidth=4;ctx.stroke();
+  // 마운드
+  ctx.fillStyle='#fff';
+  ctx.beginPath();ctx.arc(0,20,12,0,TAU);ctx.fill();
+  // 관중석 (스탠드)
+  ctx.fillStyle='#e8e8f0';
+  ctx.beginPath();ctx.ellipse(0,-40,230,90,0,Math.PI,TAU);ctx.fill();
+  ctx.strokeStyle='#ff6b35';ctx.lineWidth=10;
+  ctx.beginPath();ctx.ellipse(0,-40,230,90,0,Math.PI,TAU);ctx.stroke();
+  // 관중들 (점들)
+  for(let i=0;i<24;i++){
+    const a=Math.PI+i*Math.PI/24;
+    const cx=Math.cos(a)*200, cy=-40+Math.sin(a)*75;
+    ctx.fillStyle=['#ff6b6b','#ffd93d','#6bcb77','#4d96ff'][i%4];
+    ctx.beginPath();ctx.arc(cx,cy,7,0,TAU);ctx.fill();
+  }
+  // 전광판
+  ctx.fillStyle='#1a1a2e';RR(-70,-190,140,60,10);ctx.fill();
+  ctx.strokeStyle='#ff6b35';ctx.lineWidth=4;RR(-70,-190,140,60,10);ctx.stroke();
+  ctx.fillStyle='#ffd93d';ctx.font='bold 20px sans-serif';ctx.textAlign='center';
+  const blink=Math.sin(t/300)>0;
+  ctx.fillText(blink?'🦅 EAGLES':'⚾ HOME RUN',0,-152);
+  // 조명탑
+  for(const s of[-1,1]){
+    ctx.fillStyle='#555';
+    RR(s*190-6,-240,12,120,4);ctx.fill();
+    ctx.save();ctx.shadowColor='#fff';ctx.shadowBlur=20;
+    ctx.fillStyle='#fff7d6';
+    ctx.beginPath();ctx.arc(s*190,-248,18,0,TAU);ctx.fill();
+    ctx.restore();
+  }
+  // 팻말
+  ctx.fillStyle='#fff';RR(-110,110,220,44,22);ctx.fill();
+  ctx.strokeStyle='#ff6b35';ctx.lineWidth=4;RR(-110,110,220,44,22);ctx.stroke();
+  ctx.fillStyle='#ff6b35';ctx.font='bold 24px sans-serif';ctx.textAlign='center';
+  ctx.fillText('⚾ 이글스파크',0,140);
+  ctx.restore();
+}
+function drawSungsimdang(px,py,t){
+  // 초대형 성심당 빵집
+  ctx.save();ctx.translate(px,py);
+  ctx.fillStyle='rgba(0,0,0,.15)';
+  ctx.beginPath();ctx.ellipse(0,80,190,30,0,0,TAU);ctx.fill();
+  // 건물 (따뜻한 빵집 느낌)
+  ctx.fillStyle=gradC(0,-40,20,120,'#ffe8c9','#f5c98a');
+  RR(-160,-140,320,200,16);ctx.fill();
+  ctx.strokeStyle='#fff';ctx.lineWidth=8;RR(-160,-140,320,200,16);ctx.stroke();
+  // 지붕 (빵 모자처럼)
+  ctx.fillStyle=gradC(0,-170,10,60,'#d99a5b','#a86f35');
+  ctx.beginPath();ctx.ellipse(0,-140,180,55,0,Math.PI,TAU);ctx.fill();
+  ctx.strokeStyle='#fff';ctx.lineWidth=6;
+  ctx.beginPath();ctx.ellipse(0,-140,180,55,0,Math.PI,TAU);ctx.stroke();
+  // 간판
+  ctx.fillStyle='#e83a3a';RR(-110,-120,220,52,26);ctx.fill();
+  ctx.fillStyle='#fff';ctx.font='bold 30px sans-serif';ctx.textAlign='center';
+  ctx.fillText('🍞 성심당',0,-84);
+  // 진열창 (빵들)
+  ctx.fillStyle='#fff';RR(-140,-50,280,90,12);ctx.fill();
+  const breads=['🥐','🍞','🥖','🧁','🍩','🥪'];
+  for(let i=0;i<6;i++){
+    ctx.font='34px sans-serif';
+    const bx=-105+(i%3)*95, by=-18+Math.floor(i/3)*44;
+    const wob=Math.sin(t/400+i)*4;
+    ctx.fillText(breads[i],bx,by+wob);
+  }
+  // 문
+  ctx.fillStyle='#8a5a3a';RR(-35,10,70,50,8);ctx.fill();
+  ctx.fillStyle='#ffd93d';
+  ctx.beginPath();ctx.arc(20,36,5,0,TAU);ctx.fill();
+  // 굴뚝에서 빵 연기 (하트 모양)
+  for(let i=0;i<3;i++){
+    const sy=-195-((t/20+i*30)%90);
+    const sa=1-((-t/20-i*30)%90+90)/90;
+    ctx.globalAlpha=Math.max(0,sa)*0.7;
+    ctx.font='20px sans-serif';
+    ctx.fillText('💨',120+Math.sin(t/300+i)*10,sy);
+  }
+  ctx.globalAlpha=1;
+  // 팻말
+  ctx.fillStyle='#fff';RR(-100,95,200,44,22);ctx.fill();
+  ctx.strokeStyle='#e83a3a';ctx.lineWidth=4;RR(-100,95,200,44,22);ctx.stroke();
+  ctx.fillStyle='#e83a3a';ctx.font='bold 22px sans-serif';ctx.textAlign='center';
+  ctx.fillText('🍞 성심당 본점',0,124);
+  ctx.restore();
+}
+function drawDaejeonStation(px,py,t){
+  // 대전역 (철도 허브, 크게)
+  ctx.save();ctx.translate(px,py);
+  ctx.fillStyle='rgba(0,0,0,.15)';
+  ctx.beginPath();ctx.ellipse(0,70,200,28,0,0,TAU);ctx.fill();
+  // 역사 건물
+  ctx.fillStyle=gradC(0,-60,20,120,'#dfe8f5','#aebdd4');
+  RR(-170,-150,340,200,12);ctx.fill();
+  ctx.strokeStyle='#fff';ctx.lineWidth=7;RR(-170,-150,340,200,12);ctx.stroke();
+  // 시계탑
+  ctx.fillStyle='#2e3a5c';RR(-30,-230,60,90,8);ctx.fill();
+  ctx.fillStyle='#fff';
+  ctx.beginPath();ctx.arc(0,-195,22,0,TAU);ctx.fill();
+  ctx.strokeStyle='#2e3a5c';ctx.lineWidth=4;
+  ctx.beginPath();ctx.arc(0,-195,22,0,TAU);ctx.stroke();
+  const ta=t/1000;
+  ctx.strokeStyle='#e83a3a';ctx.lineWidth=3;
+  ctx.beginPath();ctx.moveTo(0,-195);
+  ctx.lineTo(0+Math.cos(ta)*14,-195+Math.sin(ta)*14);ctx.stroke();
+  ctx.strokeStyle='#333';ctx.lineWidth=4;
+  ctx.beginPath();ctx.moveTo(0,-195);ctx.lineTo(0,-208);ctx.stroke();
+  // 대전역 간판
+  ctx.fillStyle='#2e3a5c';RR(-100,-140,200,44,22);ctx.fill();
+  ctx.fillStyle='#fff';ctx.font='bold 26px sans-serif';ctx.textAlign='center';
+  ctx.fillText('🚂 대전역',0,-110);
+  // 창문들
+  for(let i=0;i<5;i++){
+    ctx.fillStyle='#fff7d6';
+    RR(-140+i*60,-80,40,60,8);ctx.fill();
+    ctx.strokeStyle='#8a9ab5';ctx.lineWidth=3;
+    RR(-140+i*60,-80,40,60,8);ctx.stroke();
+  }
+  // 선로
+  ctx.strokeStyle='#777';ctx.lineWidth=8;
+  for(let li=0;li<3;li++){
+    const ly=80+li*22;
+    ctx.beginPath();ctx.moveTo(-220,ly);ctx.lineTo(220,ly);ctx.stroke();
+  }
+  ctx.strokeStyle='#aaa';ctx.lineWidth=4;
+  for(let ti=-200;ti<200;ti+=24){
+    ctx.beginPath();ctx.moveTo(ti,74);ctx.lineTo(ti,130);ctx.stroke();
+  }
+  // KTX (움직이는 기차)
+  const tx=((t/8)%520)-260;
+  ctx.fillStyle='#fff';RR(tx-70,36,140,44,14);ctx.fill();
+  ctx.strokeStyle='#e83a3a';ctx.lineWidth=4;RR(tx-70,36,140,44,14);ctx.stroke();
+  ctx.fillStyle='#2e3a5c';RR(tx-70,48,140,18,6);ctx.fill();
+  ctx.fillStyle='#7ec8f7';
+  for(let wi=0;wi<4;wi++){RR(tx-58+wi*32,42,24,14,4);ctx.fill();}
+  ctx.fillStyle='#333';
+  ctx.beginPath();ctx.arc(tx-40,84,10,0,TAU);ctx.fill();
+  ctx.beginPath();ctx.arc(tx+40,84,10,0,TAU);ctx.fill();
+  ctx.restore();
+}
+function drawExpo(px,py,t){
+  // 엑스포과학공원
+  ctx.save();ctx.translate(px,py);
+  // 돔 (한빛탑 주변 과학관)
+  ctx.fillStyle=gradC(0,-60,10,80,'#bfe3ff','#7eb8e8');
+  ctx.beginPath();ctx.arc(0,-20,80,Math.PI,TAU);ctx.fill();
+  ctx.strokeStyle='#fff';ctx.lineWidth=5;
+  ctx.beginPath();ctx.arc(0,-20,80,Math.PI,TAU);ctx.stroke();
+  // 돔 반사광
+  ctx.strokeStyle='rgba(255,255,255,.7)';ctx.lineWidth=8;
+  ctx.beginPath();ctx.arc(0,-20,55,Math.PI*1.2,Math.PI*1.5);ctx.stroke();
+  // 로켓
+  const ry=-140+Math.sin(t/500)*10;
+  ctx.fillStyle='#fff';
+  ctx.beginPath();ctx.ellipse(90,ry,18,44,0,0,TAU);ctx.fill();
+  ctx.strokeStyle='#e83a3a';ctx.lineWidth=4;
+  ctx.beginPath();ctx.ellipse(90,ry,18,44,0,0,TAU);ctx.stroke();
+  ctx.fillStyle='#e83a3a';
+  ctx.beginPath();ctx.moveTo(90,ry-44);ctx.lineTo(78,ry-70);ctx.lineTo(102,ry-70);ctx.closePath();ctx.fill();
+  ctx.fillStyle='#ffd93d';
+  ctx.beginPath();ctx.arc(90,ry-10,8,0,TAU);ctx.fill();
+  // 불꽃
+  ctx.fillStyle='#ff9f43';
+  ctx.beginPath();ctx.moveTo(82,ry+44);ctx.lineTo(90,ry+62+Math.sin(t/60)*8);ctx.lineTo(98,ry+44);ctx.closePath();ctx.fill();
+  // 원자 모형
+  ctx.strokeStyle='#5cb8ff';ctx.lineWidth=3;
+  for(let i=0;i<3;i++){
+    ctx.save();ctx.translate(-90,-80);ctx.rotate(i*Math.PI/3+t/2000);
+    ctx.beginPath();ctx.ellipse(0,0,34,13,0,0,TAU);ctx.stroke();
+    ctx.restore();
+  }
+  ctx.fillStyle='#e83a3a';
+  ctx.beginPath();ctx.arc(-90,-80,8,0,TAU);ctx.fill();
+  // 팻말
+  ctx.fillStyle='#fff';RR(-110,60,220,40,20);ctx.fill();
+  ctx.strokeStyle='#5cb8ff';ctx.lineWidth=4;RR(-110,60,220,40,20);ctx.stroke();
+  ctx.fillStyle='#2e7ec2';ctx.font='bold 20px sans-serif';ctx.textAlign='center';
+  ctx.fillText('🔬 엑스포과학공원',0,87);
+  ctx.restore();
+}
+function drawOnsen(px,py,t){
+  // 유성온천
+  ctx.save();ctx.translate(px,py);
+  // 온천 탕
+  ctx.fillStyle='#8a6a4a';
+  ctx.beginPath();ctx.ellipse(0,30,110,55,0,0,TAU);ctx.fill();
+  ctx.fillStyle=gradC(0,20,10,80,'#bfe8ff','#7ec8e8');
+  ctx.beginPath();ctx.ellipse(0,22,95,44,0,0,TAU);ctx.fill();
+  // 김 (수증기)
+  for(let i=0;i<5;i++){
+    const sx=-70+i*35;
+    const sy=-30-((t/15+i*40)%110);
+    const sa=1-((t/15+i*40)%110)/110;
+    ctx.globalAlpha=Math.max(0,sa)*0.55;
+    ctx.fillStyle='#fff';
+    ctx.font='28px sans-serif';
+    ctx.fillText('♨',sx+Math.sin(t/400+i*2)*12,sy);
+  }
+  ctx.globalAlpha=1;
+  // 바위
+  ctx.fillStyle='#9a9aa5';
+  ctx.beginPath();ctx.ellipse(-95,40,28,20,0,0,TAU);ctx.fill();
+  ctx.beginPath();ctx.ellipse(95,40,28,20,0,0,TAU);ctx.fill();
+  // 대나무
+  ctx.strokeStyle='#4a9a4a';ctx.lineWidth=8;
+  ctx.beginPath();ctx.moveTo(-130,-60);ctx.lineTo(-130,40);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(130,-60);ctx.lineTo(130,40);ctx.stroke();
+  ctx.fillStyle='#5da24e';
+  ctx.beginPath();ctx.ellipse(-130,-70,30,14,0.4,0,TAU);ctx.fill();
+  ctx.beginPath();ctx.ellipse(130,-70,30,14,-0.4,0,TAU);ctx.fill();
+  // 팻말
+  ctx.fillStyle='#fff';RR(-90,80,180,40,20);ctx.fill();
+  ctx.strokeStyle='#e88a3a';ctx.lineWidth=4;RR(-90,80,180,40,20);ctx.stroke();
+  ctx.fillStyle='#c26a1a';ctx.font='bold 20px sans-serif';ctx.textAlign='center';
+  ctx.fillText('♨️ 유성온천',0,107);
+  ctx.restore();
+}
+function drawHanbat(px,py,t){
+  // 한밭수목원
+  ctx.save();ctx.translate(px,py);
+  // 나무들
+  const trees=[[-80,0,1],[0,-20,1.3],[80,0,1],[-40,30,0.8],[40,30,0.8]];
+  for(const [tx,ty,sc] of trees){
+    ctx.save();ctx.translate(tx,ty);ctx.scale(sc,sc);
+    ctx.fillStyle='#7a5a3a';RR(-8,-10,16,50,6);ctx.fill();
+    ctx.fillStyle='#4a9a4a';
+    ctx.beginPath();ctx.arc(0,-40,34,0,TAU);ctx.fill();
+    ctx.fillStyle='#5da24e';
+    ctx.beginPath();ctx.arc(-12,-48,20,0,TAU);ctx.fill();
+    const sw=Math.sin(t/500+tx)*3;
+    ctx.fillStyle='#ff9ecf';
+    ctx.beginPath();ctx.arc(-18+sw,-52,5,0,TAU);ctx.fill();
+    ctx.beginPath();ctx.arc(14-sw,-44,5,0,TAU);ctx.fill();
+    ctx.restore();
+  }
+  // 산책로
+  ctx.fillStyle='#e8d9b8';
+  ctx.beginPath();ctx.ellipse(0,70,90,22,0,0,TAU);ctx.fill();
+  // 팻말
+  ctx.fillStyle='#fff';RR(-90,90,180,40,20);ctx.fill();
+  ctx.strokeStyle='#4a9a4a';ctx.lineWidth=4;RR(-90,90,180,40,20);ctx.stroke();
+  ctx.fillStyle='#2e7e2e';ctx.font='bold 20px sans-serif';ctx.textAlign='center';
+  ctx.fillText('🌳 한밭수목원',0,117);
+  ctx.restore();
+}
+function drawExpoBridge(px,py){
+  // 엑스포다리
+  ctx.save();ctx.translate(px,py);
+  // 강
+  ctx.fillStyle=gradC(0,40,10,100,'#7ec8f7','#4a9ac2');
+  RR(-180,10,360,70,10);ctx.fill();
+  // 다리 아치
+  ctx.strokeStyle='#fff';ctx.lineWidth=14;
+  ctx.beginPath();ctx.arc(0,80,130,Math.PI,TAU);ctx.stroke();
+  ctx.strokeStyle='#ff6b9d';ctx.lineWidth=6;
+  ctx.beginPath();ctx.arc(0,80,130,Math.PI,TAU);ctx.stroke();
+  // 다리 상판
+  ctx.fillStyle='#e8e8f0';RR(-170,-20,340,26,8);ctx.fill();
+  ctx.strokeStyle='#aaa';ctx.lineWidth=3;RR(-170,-20,340,26,8);ctx.stroke();
+  // 난간
+  ctx.strokeStyle='#888';ctx.lineWidth=4;
+  for(let i=-160;i<=160;i+=32){
+    ctx.beginPath();ctx.moveTo(i,-20);ctx.lineTo(i,-44);ctx.stroke();
+  }
+  ctx.beginPath();ctx.moveTo(-170,-44);ctx.lineTo(170,-44);ctx.stroke();
+  // 조명
+  for(let i=-120;i<=120;i+=60){
+    ctx.save();ctx.shadowColor='#ffe27a';ctx.shadowBlur=12;
+    ctx.fillStyle='#ffe27a';
+    ctx.beginPath();ctx.arc(i,-50,7,0,TAU);ctx.fill();
+    ctx.restore();
+  }
+  // 팻말
+  ctx.fillStyle='#fff';RR(-90,95,180,40,20);ctx.fill();
+  ctx.strokeStyle='#ff6b9d';ctx.lineWidth=4;RR(-90,95,180,40,20);ctx.stroke();
+  ctx.fillStyle='#c24a7a';ctx.font='bold 20px sans-serif';ctx.textAlign='center';
+  ctx.fillText('🌉 엑스포다리',0,122);
+  ctx.restore();
+}
 
 function drawLions(px,py,t){
   // baseball stadium
@@ -622,18 +971,18 @@ function drawGround(camX,camY,t){
     const lx=L.x-camX, ly=L.y-camY;
     const cr=L.cr||220;
     if(lx<-cr||lx>LW+cr||ly<-cr||ly>LH+cr)continue;
-    if(L.f==='ohori')drawOhori(lx,ly,t);
-     else if(L.f==='station')drawStation(lx,ly);
-    else if(L.f==='torii')drawStreet(lx,ly);
-    else if(L.f==='shrine')drawPalgongsan(lx,ly,t);
-    else if(L.f==='yatai'){drawYatai(lx,ly,0);drawYatai(lx+44,ly+6,1);}
-    else if(L.f==='castle')drawCastle(lx,ly);
-    else if(L.f==='retro')drawRetro(lx,ly);
-    else if(L.f==='school')drawSchool(lx,ly);
-    else if(L.f==='tower')drawTower(lx,ly);
-    else if(L.f==='canal')drawFerris(lx,ly,t);
-    else if(L.f==='kushida')drawHeat(lx,ly);
-    else if(L.f==='lions')drawLions(lx,ly,t);
+    if(L.f==='daecheong')drawOhori(lx,ly,t);
+    else if(L.f==='daejeonst')drawDaejeonStation(lx,ly,t);
+    else if(L.f==='dunsan')drawStreet(lx,ly);
+    else if(L.f==='kkumdori')drawKkumdori(lx,ly,t);
+    else if(L.f==='expo')drawExpo(lx,ly,t);
+    else if(L.f==='hanbat')drawHanbat(lx,ly,t);
+    else if(L.f==='expobridge')drawExpoBridge(lx,ly);
+    else if(L.f==='kyowondae')drawSchool(lx,ly);
+    else if(L.f==='hanbit')drawTower(lx,ly);
+    else if(L.f==='yuseong')drawOnsen(lx,ly,t);
+    else if(L.f==='sungsimdang')drawSungsimdang(lx,ly,t);
+    else if(L.f==='eagles')drawEaglesPark(lx,ly,t);
     // name sign
     ctx.font='900 13px sans-serif';ctx.textAlign='center';
     const tw=ctx.measureText(LL(L)).width;
@@ -1078,35 +1427,39 @@ function drawBullet(b,camX,camY){
 
 /* ================= 언어 (ko/ja) ================= */
 let LANG='ko';
-try{LANG=localStorage.getItem('daegu_lang')||'ko';}catch(e){}
+try{LANG=localStorage.getItem('daejeon_lang')||'ko';}catch(e){}
 if(LANG!=='ja')LANG='ko';
 const STR={
-ko:{title:'대구 서바이벌',subtitle:'좀비 비둘기 무리가 몰려온다!<br>후더덕과 함께 대구 여행에서 살아남아라 🦆🍗',
-howto:'🕹️ <b>이동:</b> WASD / 방향키 / 화면 드래그(조이스틱)<br>🍗 <b>공격:</b> 자동! 대구 명물 무기 7종으로 싸워요<br>💎 <b>성장:</b> 기념품 젬을 모아 레벨업 → 3장 중 1장 선택<br>👹 <b>보스:</b> 90초마다 비둘기왕 출현!<br>🍗 <b>아이템:</b> 치킨·뭉티기(체력 회복), 자석(젬 흡수)<br>🗺️ <b>여행지:</b> 대구역→동성로→서문시장→수성못→83타워→라이온즈파크',
+ko:{title:'대전 서바이벌',subtitle:'좀비 비둘기 무리가 몰려온다!<br>후더덕과 함께 대전 여행에서 살아남아라 🦆🍗',
+howto:'🕹️ <b>이동:</b> WASD / 방향키 / 화면 드래그(조이스틱)<br>🍗 <b>공격:</b> 자동! 대전 명물 무기 7종으로 싸워요<br>💎 <b>성장:</b> 기념품 젬을 모아 레벨업 → 3장 중 1장 선택<br>👹 <b>보스:</b> 90초마다 비둘기왕 출현!<br>🍗 <b>아이템:</b> 치킨·뭉티기(체력 회복), 자석(젬 흡수)<br>🗺️ <b>여행지:</b> 대전역→성심당→꿈돌이→엑스포→한빛탑→이글스파크',
 start:'게임 시작',best:'🏆 최고 기록: ',levelup:'⬆️ 레벨 업! 업그레이드 선택',levelup_sub:'3장 중 하나를 골라줘',stat_up:'스탯 강화',
 paused:'⏸ 일시정지',resting:'잠시 쉬는 중...',resume:'계속하기',quit:'그만하기',gameover:'💀 게임 오버',
-over1:'좀비 비둘기들에게 여행을 방해받았어요...',over2:'꽥! 다음엔 대구역부터 다시!',over3:'후더덕의 대구 여행은 계속된다!',
+over1:'좀비 비둘기들에게 여행을 방해받았어요...',over2:'꽥! 다음엔 대전역부터 다시!',over3:'후더덕의 대전 여행은 계속된다!',
 st_time:'생존 시간',st_level:'레벨',st_kill:'처치',again:'다시 도전',new_record:'🎉 신기록 달성!',
-wave:'🦆 대구에서 살아남아라!',wave_n:'웨이브! 좀비 비둘기 무리가 몰려온다!',
+wave:'🦆 대전에서 살아남아라!',wave_n:'웨이브! 좀비 비둘기 무리가 몰려온다!',
 boss_spawn:'👹 비둘기왕 출현!',boss_kill:'🎉 보스 처치!',magnet:'🧲 자석 발동!',fullscreen:'전체화면',
-castle_mode:'🏯 달성토성 방어 모드! 10초간 토성이 공격한다!',train_ride:'🚄 KTX 탑승! 동대구역 방면으로 출발!',
-final_spawn:'👑 끝판왕 비둘기 황제 출현!',victory:'🎉 클리어!',victory_msg:'끝판왕을 물리쳤다! 대구 여행 완주!',
+castle_mode:'🏯 대전역 방어 모드! 10초간 역이 공격한다!',train_ride:'🚄 KTX 탑승! 서울역 방면으로 출발!',
+final_spawn:'👑 끝판왕 비둘기 황제 출현!',victory:'🎉 클리어!',victory_msg:'끝판왕을 물리쳤다! 대전 여행 완주!',
 elite_spawn:'✨ 엘리트 출현!',
-bene_torii:'🏃 동성로 질주! 이동속도 UP (10초)',bene_shrine:'🙏 갓바위 소원! 젬 2배 (20초)',
-bene_yatai:'🍗 야시장 먹방! 체력 풀회복',bene_retro:'🚂 추억 여행! 젬 전부 흡수',
-bene_lions:'⚾ 홈런 타임! 10초간 공격력 2배!',bene_mung:'🥩 뭉티기! 체력 +60',
+bene_daejeonst:'🚂 KTX 질주! 이동속도 UP (10초)',bene_kkumdori:'🦫 꿈돌이 응원! 젬 2배 (20초)',
+bene_sungsimdang:'🍞 성심당! 체력 풀회복',bene_hanbat:'🌳 숲의 기운! 젬 전부 흡수',
+bene_dunsan:'🏙️ 도시 에너지! 공격력 UP (15초)',bene_kyowondae:'🎓 지혜의 빛! 쿨다운 감소 (20초)',
+bene_expo:'🔬 과학의 힘! 무기 강화',bene_hanbit:'🗼 한빛 보호! 무적 (8초)',
+bene_yuseong:'♨️ 온천욕! 체력 +50',bene_daecheong:'🌊 호수 바람! 이동속도 UP (10초)',
+bene_expobridge:'🌉 다리 건너! 젬 전부 흡수',
+bene_eagles:'⚾ 홈런 타임! 10초간 공격력 2배!',bene_mung:'🥩 뭉티기! 체력 +60',
 bene_school:'📣 계명대 응원! 공격력 UP (15초)',bene_tower:'🗼 83타워 전망대! 쿨다운 감소 (20초)',
 bene_canal:'🎡 이월드! 무기 강화',bene_kushida:'🔥 대프리카! 무적 (8초)',
 bene_giant:'🍗 파워 치킨! 거대 오리 변신! (12초)',cat_spawn:'🐱 거대 고양이 출현!',
 bosscat_spawn:'🕶️ 보스 고양이 출현! (고양이 10마리 처치!)',
 ohori_jog:'🏃 수성못! 강제 조깅 2바퀴!',ohori_done:'🏃 조깅 완료! 체력 +30',ohori_lap:'🏃 바퀴 완료!',bosscat_fly:'🕶️ 선글라스를 끼고 하늘로 날아간다...!',
-ending_title:'🎬 게임 엔딩!',ending_msg:'거대 고양이가 선글라스를 끼고 하늘로 날아갔다! 대구에 평화가 찾아왔다! 🕊️',
+ending_title:'🎬 게임 엔딩!',ending_msg:'거대 고양이가 선글라스를 끼고 하늘로 날아갔다! 대전에 평화가 찾아왔다! 🕊️',
 cat_prog:'🐱 고양이',bene_fly:'🪽 하늘을 날다! 무적 비행! (10초)',
 mode_ta:'🏆 타임어택 (2분)',mode_sv:'🦆 서바이벌',
 sc_title:'🏆 타임어택 결과',sc_score:'점수',sc_name_ph:'이름 입력 (12자)',
 sc_save:'📸 이미지 저장',sc_again:'다시 도전',sc_board:'🏆 명예의 전당',
-sc_timeup:'시간 종료!',sc_died:'전사...',ta_time:'남은 시간',plane_takeoff:'🛫 대구로 출발!',plane_fly:'✈️ 대구로 비행 중...',plane_arrive:'🛬 대구 도착!',plane_skip:'탭하여 건너뛰기'},
-ja:{title:'大邱サバイバル',subtitle:'ゾンビ鳩の群れがやってくる!<br>フードックと一緒に大邱旅行を生き残れ 🦆🍗',
+sc_timeup:'시간 종료!',sc_died:'전사...',ta_time:'남은 시간',plane_takeoff:'🛫 대전으로 출발!',plane_fly:'✈️ 대전으로 비행 중...',plane_arrive:'🛬 대전 도착!',plane_skip:'탭하여 건너뛰기'},
+ja:{title:'大田サバイバル',subtitle:'ゾンビ鳩の群れがやってくる!<br>フードックと一緒に大邱旅行を生き残れ 🦆🍗',
 howto:'🕹️ <b>移動:</b> WASD / 矢印キー / 画面ドラッグ(ジョイスティック)<br>🍗 <b>攻撃:</b> 自動! 大邱名物武器7種で戦おう<br>💎 <b>成長:</b> お土産ジェムを集めてレベルアップ → 3枚から1枚選択<br>👹 <b>ボス:</b> 90秒ごとに鳩王出現!<br>🍗 <b>アイテム:</b> チキン・モンティギ(体力回復)、磁石(ジェム吸収)<br>🗺️ <b>旅行地:</b> 大邱駅→東城路→西門市場→寿城池→83タワー→ライオンズパーク',
 start:'ゲームスタート',best:'🏆 最高記録: ',levelup:'⬆️ レベルアップ! 選択',levelup_sub:'3枚から1枚選んでね',stat_up:'ステータス強化',
 paused:'⏸ 一時停止',resting:'休憩中...',resume:'つづける',quit:'やめる',gameover:'💀 ゲームオーバー',
@@ -1117,9 +1470,13 @@ boss_spawn:'👹 鳩王出現!',boss_kill:'🎉 ボス撃破!',magnet:'🧲 磁�
 castle_mode:'🏯 達城土城防衛モード! 10秒間土城が攻撃!',train_ride:'🚄 KTX乗車! 東大邱駅方面へ出発!',
 final_spawn:'👑 最終ボス 鳩皇帝出現!',victory:'🎉 クリア!',victory_msg:'最終ボスを倒した! 大邱旅行完走!',
 elite_spawn:'✨ エリート出現!',
-bene_torii:'🏃 東城路ダッシュ! 移動速度UP (10秒)',bene_shrine:'🙏 石仏の願い! ジェム2倍 (20秒)',
-bene_yatai:'🍗 夜市場モッパン! 体力全回復',bene_retro:'🚂 思い出旅行! ジェム全部吸収',
-bene_lions:'⚾ ホームランタイム! 10秒間攻撃力2倍!',bene_mung:'🥩 モンティギ! 体力+60',
+bene_daejeonst:'🚂 KTXダッシュ! 移動速度UP (10秒)',bene_kkumdori:'🦫 クムドリ応援! ジェム2倍 (20秒)',
+bene_sungsimdang:'🍞 聖心堂! 体力全回復',bene_hanbat:'🌳 森の気! ジェム全部吸収',
+bene_dunsan:'🏙️ 都市エネルギー! 攻撃力UP (15秒)',bene_kyowondae:'🎓 知恵の光! クールダウン減少 (20秒)',
+bene_expo:'🔬 科学の力! 武器強化',bene_hanbit:'🗼 ハンビッ保護! 無敵 (8秒)',
+bene_yuseong:'♨️ 温泉! 体力+50',bene_daecheong:'🌊 湖の風! 移動速度UP (10秒)',
+bene_expobridge:'🌉 橋渡り! ジェム全部吸収',
+bene_eagles:'⚾ ホームランタイム! 10秒間攻撃力2倍!',bene_mung:'🥩 モンティギ! 体力+60',
 bene_school:'📣 啓明大学応援! 攻撃力UP (15秒)',bene_tower:'🗼 83タワー展望台! クールダウン減少 (20秒)',
 bene_canal:'🎡 イワールド! 武器強化',bene_kushida:'🔥 テグリカ! 無敵 (8秒)',
 bene_giant:'🍗 パワーチキン! 巨大アヒル変身! (12秒)',cat_spawn:'🐱 巨大猫出現!',
@@ -1137,7 +1494,7 @@ function addScore(n){if(gameMode==='timeattack'&&state==='play')score+=n;}
 function LN(o){return LANG==='ja'?(o.nja||o.name):o.name;}
 function LD(o){return LANG==='ja'?(o.dja||o.desc):o.desc;}
 function LL(l){return LANG==='ja'?(l.lja||l.label):l.label;}
-function setLang(l){LANG=(l==='ja')?'ja':'ko';try{localStorage.setItem('daegu_lang',LANG);}catch(e){}applyLang();}
+function setLang(l){LANG=(l==='ja')?'ja':'ko';try{localStorage.setItem('daejeon_lang',LANG);}catch(e){}applyLang();}
 function applyLang(){
   document.title=T('title');
   try{document.documentElement.lang=LANG==='ja'?'ja':'ko';}catch(e){}
@@ -1162,7 +1519,7 @@ function applyLang(){
   $('btn-fs').title=T('fullscreen');
   $('lang-ko').classList.toggle('on',LANG==='ko');
   $('lang-ja').classList.toggle('on',LANG==='ja');
-  try{const b=localStorage.getItem('daegu_best');$('best-line').textContent=b?(T('best')+fmtT(+b)):'';}catch(e){}
+  try{const b=localStorage.getItem('daejeon_best');$('best-line').textContent=b?(T('best')+fmtT(+b)):'';}catch(e){}
 }
 /* ================= 게임 상태 ================= */
 let state='title';
@@ -1176,13 +1533,13 @@ const cshots=[];
 let magnetAll=0;
 
 const WEAPONS={
-  quack:  {name:'대구 막창포',icon:'🥓',max:5,desc:'막창 자동 사격',nja:'大邱マクチャン砲',dja:'マクチャンを自動射撃'},
-  meteor: {name:'납작만두 스트라이크',icon:'🥟',max:5,desc:'납작만두 폭탄 낙하',nja:'ペッタンマンドゥストライク',dja:'ペッタンマンドゥ爆弾が落下'},
+  quack:  {name:'튀김소보로',icon:'🍞',max:5,desc:'성심당 소보로 자동 사격',nja:'大邱マクチャン砲',dja:'マクチャンを自動射撃'},
+  meteor: {name:'홈런포',icon:'⚾',max:5,desc:'이글스 홈런포 폭탄 낙하',nja:'ペッタンマンドゥストライク',dja:'ペッタンマンドゥ爆弾が落下'},
   lightning:{name:'KTX 스파크',icon:'🚄',max:5,desc:'전차 스파크가 적 사이를 튐',nja:'KTXスパーク',dja:'電車のスパークが敵の間を飛ぶ'},
-  orbit:  {name:'궤도 약령환',icon:'💊',max:5,desc:'약령시 한약환이 빙글빙글',nja:'軌道薬令丸',dja:'薬令市の漢方丸がぐるぐる'},
-  frost:  {name:'수성못 빙수',icon:'🍧',max:5,desc:'빙수 폭발로 동결 + 감속',nja:'寿城池かき氷',dja:'かき氷爆発で凍結+減速'},
-  laser:  {name:'갓바위 레이저',icon:'🙏',max:5,desc:'소원의 레이저',nja:'石仏レーザー',dja:'願い事のレーザー'},
-  mandu:  {name:'만두튀김 러시',icon:'🍘',max:5,desc:'바삭한 만두튀김 투척+착탄 폭발',nja:'揚げ餃子ラッシュ',dja:'サクサク揚げ餃子を投げて着弾爆発'},
+  orbit:  {name:'꿈돌이 궤도',icon:'🦫',max:5,desc:'꿈돌이가 빙글빙글',nja:'軌道薬令丸',dja:'薬令市の漢方丸がぐるぐる'},
+  frost:  {name:'온천 스팀',icon:'♨️',max:5,desc:'유성온천 스팀 폭발 + 감속',nja:'寿城池かき氷',dja:'かき氷爆発で凍結+減速'},
+  laser:  {name:'엑스포 레이저',icon:'🔬',max:5,desc:'과학의 레이저',nja:'石仏レーザー',dja:'願い事のレーザー'},
+  mandu:  {name:'칼국수 러시',icon:'🍜',max:5,desc:'칼국수 면발 투척+착탄 폭발',nja:'揚げ餃子ラッシュ',dja:'サクサク揚げ餃子を投げて着弾爆発'},
 };
 function wstats(id,lv){
   switch(id){
@@ -1207,7 +1564,7 @@ const STATS={
 function resetGame(){
   player={x:WORLD_W/2,y:WORLD_H/2,r:16,hp:100,maxhp:100,speed:175,level:1,xp:0,xpNext:6,
     weapons:{quack:1},dmgMul:1,hasteMul:1,magnetR:95,regen:0,ang:0,moving:false,hurtT:0,
-    fireT:0,metT:2,zapT:1,frostT:3,manduT:1,orbitA:0,_lionsT:0};
+    fireT:0,metT:2,zapT:1,frostT:3,manduT:1,orbitA:0,_eaglesT:0};
   enemies=[];bullets=[];gems=[];pickups=[];parts=[];dnums=[];mets=[];ltns=[];
   camX=player.x-LW/2;camY=player.y-LH/2;shake=0;gameT=0;kills=0;spawnT=0;bossN=0;waveN=0;magnetAll=0;pendingLv=0;
   castleT=0;castleCd=0;trainT=-1;trainCd=0;eliteT=25;finalSpawned=false;cshots.length=0;
@@ -1611,7 +1968,7 @@ function update(dt,t){
   if(p._spdT>0){p._spdT-=dt;if(p._spdT<=0)p.speed/=1.4;}
   if(p._dmgT>0){p._dmgT-=dt;if(p._dmgT<=0)p.dmgMul/=1.5;}
   if(p._hstT>0){p._hstT-=dt;if(p._hstT<=0)p.hasteMul/=0.7;}
-  if(p._lionsT>0){p._lionsT-=dt;if(p._lionsT<=0)p.dmgMul/=2;}
+  if(p._eaglesT>0){p._eaglesT-=dt;if(p._eaglesT<=0)p.dmgMul/=2;}
   if(p._xpT>0)p._xpT-=dt;
   if(p._invT>0)p._invT-=dt;
   if(p._giantT>0){
@@ -2125,7 +2482,7 @@ function drawIntro(t){
     ctx.font='900 '+Math.min(66,LW*0.075)+'px sans-serif';
     ctx.shadowColor='rgba(50,80,130,.65)';ctx.shadowBlur=20;
     ctx.fillStyle='#ffffff';
-    ctx.fillText(LANG==='ja'?'大邱サバイバル':'🦆 대구 서바이벌',LW/2,LH*0.3);
+    ctx.fillText(LANG==='ja'?'大田サバイバル':'🦆 대전 서바이벌',LW/2,LH*0.3);
     ctx.font='700 '+Math.min(27,LW*0.034)+'px sans-serif';
     ctx.fillStyle='#fff6d8';
     ctx.fillText(LANG==='ja'?'カモの大冒険':'오리의 대모험',LW/2,LH*0.3+48);
@@ -2156,7 +2513,7 @@ function showTitle(){
   $('ov-pause').classList.add('hidden');
   $('ov-score').classList.add('hidden');
   $('title-img').src=TITLE_ART;
-  const best=localStorage.getItem('daegu_best');
+  const best=localStorage.getItem('daejeon_best');
   $('best-line').textContent=best?(T('best')+fmtT(+best)):'';
   try{
     const bd=getBoard();
@@ -2378,8 +2735,8 @@ function gameOver(){
     $('st-kill').textContent=kills;
     const msgs=[T('over1'),T('over2'),T('over3')];
     $('over-msg').textContent=msgs[irnd(0,msgs.length-1)];
-    const best=+(localStorage.getItem('daegu_best')||0);
-    if(gameT>best){localStorage.setItem('daegu_best',Math.floor(gameT));$('best-line2').textContent=T('new_record');}
+    const best=+(localStorage.getItem('daejeon_best')||0);
+    if(gameT>best){localStorage.setItem('daejeon_best',Math.floor(gameT));$('best-line2').textContent=T('new_record');}
     else $('best-line2').textContent=T('best')+fmtT(best);
     $('ov-over').classList.remove('hidden');
   },900);
@@ -2395,7 +2752,7 @@ function saveSurvivalImage(){
   c.strokeStyle='#ffb020';c.lineWidth=10;c.strokeRect(24,24,1032,1032);
   c.textAlign='center';
   c.font='900 64px sans-serif';c.fillStyle='#ffe88f';
-  c.fillText('🏆 '+(LANG==='ja'?'大邱サバイバル':'대구 서바이벌'),540,150);
+  c.fillText('🏆 '+(LANG==='ja'?'大田サバイバル':'대전 서바이벌'),540,150);
   c.font='700 40px sans-serif';c.fillStyle='#aeb8d8';
   c.fillText(LANG==='ja'?'サバイバル記録':'서바이벌 기록',540,215);
   c.font='900 110px sans-serif';c.fillStyle='#fff';
@@ -2512,15 +2869,18 @@ function triggerBenefit(L){
   L.beneCd=40;
   const p=player;
   switch(L.f){
-    case 'torii': p.speed*=1.4;p._spdT=10;waveBanner(T('bene_torii'));break;
-    case 'shrine': p._xpT=20;waveBanner(T('bene_shrine'));break;
-    case 'yatai': p.hp=p.maxhp;waveBanner(T('bene_yatai'));boomParts(p.x,p.y,'#7dff8a',15);break;
-    case 'retro': magnetAll=5;waveBanner(T('bene_retro'));break;
-    case 'school': p.dmgMul*=1.5;p._dmgT=15;waveBanner(T('bene_school'));break;
-    case 'tower': p.hasteMul*=0.7;p._hstT=20;waveBanner(T('bene_tower'));break;
-    case 'canal': upgradeRandomWeapon();waveBanner(T('bene_canal'));break;
-    case 'kushida': p._invT=8;waveBanner(T('bene_kushida'));break;
-    case 'lions': p.dmgMul*=2;p._lionsT=10;waveBanner(T('bene_lions'));break;
+    case 'daejeonst': p.speed*=1.4;p._spdT=10;waveBanner(T('bene_daejeonst'));break;
+    case 'kkumdori': p._xpT=20;waveBanner(T('bene_kkumdori'));break;
+    case 'sungsimdang': p.hp=p.maxhp;waveBanner(T('bene_sungsimdang'));boomParts(p.x,p.y,'#7dff8a',15);break;
+    case 'hanbat': magnetAll=5;waveBanner(T('bene_hanbat'));break;
+    case 'dunsan': p.dmgMul*=1.5;p._dmgT=15;waveBanner(T('bene_dunsan'));break;
+    case 'kyowondae': p.hasteMul*=0.7;p._hstT=20;waveBanner(T('bene_kyowondae'));break;
+    case 'expo': upgradeRandomWeapon();waveBanner(T('bene_expo'));break;
+    case 'hanbit': p._invT=8;waveBanner(T('bene_hanbit'));break;
+    case 'yuseong': p.hp=Math.min(p.maxhp,p.hp+50);waveBanner(T('bene_yuseong'));boomParts(p.x,p.y,'#7dff8a',15);break;
+    case 'daecheong': p._spdT=10;p.speed*=1.3;waveBanner(T('bene_daecheong'));break;
+    case 'expobridge': magnetAll=5;waveBanner(T('bene_expobridge'));break;
+    case 'eagles': p.dmgMul*=2;p._eaglesT=10;waveBanner(T('bene_eagles'));break;
   }
   addScore(30);sPick();
 }
@@ -2539,7 +2899,7 @@ function timeUp(died){
   showScoreScreen(died);
 }
 function getBoard(){
-  try{return JSON.parse(localStorage.getItem('daegu_board')||'[]');}catch(e){return [];}
+  try{return JSON.parse(localStorage.getItem('daejeon_board')||'[]');}catch(e){return [];}
 }
 function showScoreScreen(died){
   setTimeout(()=>{
@@ -2566,7 +2926,7 @@ function saveScoreImage(){
   const bd=getBoard();
   bd.push({name,score,date:Date.now()});
   bd.sort((a,b)=>b.score-a.score);
-  try{localStorage.setItem('daegu_board',JSON.stringify(bd.slice(0,5)));}catch(e){}
+  try{localStorage.setItem('daejeon_board',JSON.stringify(bd.slice(0,5)));}catch(e){}
   showScoreScreen._saved=true;
   const cv=document.createElement('canvas');
   cv.width=1080;cv.height=1080;
@@ -2577,7 +2937,7 @@ function saveScoreImage(){
   c.strokeStyle='#ffb020';c.lineWidth=10;c.strokeRect(24,24,1032,1032);
   c.textAlign='center';
   c.font='900 64px sans-serif';c.fillStyle='#ffe88f';
-  c.fillText('🏆 '+(LANG==='ja'?'大邱サバイバル':'대구 서바이벌'),540,150);
+  c.fillText('🏆 '+(LANG==='ja'?'大田サバイバル':'대전 서바이벌'),540,150);
   c.font='700 40px sans-serif';c.fillStyle='#aeb8d8';
   c.fillText(LANG==='ja'?'タイムアタック':'타임어택',540,215);
   c.font='900 110px sans-serif';c.fillStyle='#fff';
@@ -2611,8 +2971,8 @@ function gameClear(){
     $('st-kill').textContent=kills;
     $('t-overtitle').textContent=T('victory');
     $('over-msg').textContent=T('victory_msg');
-    const best=+(localStorage.getItem('daegu_best')||0);
-    if(gameT>best){localStorage.setItem('daegu_best',Math.floor(gameT));$('best-line2').textContent=T('new_record');}
+    const best=+(localStorage.getItem('daejeon_best')||0);
+    if(gameT>best){localStorage.setItem('daejeon_best',Math.floor(gameT));$('best-line2').textContent=T('new_record');}
     else $('best-line2').textContent=T('best')+fmtT(best);
     $('ov-over').classList.remove('hidden');
   },1200);
