@@ -71,6 +71,22 @@
 .card.chuncheon .emoji{font-size:64px}
 .card.jamsil{background:linear-gradient(135deg,#3a1a4a,#1a1a2e)}
 .card.jamsil .emoji{font-size:64px}
+
+  .railmap{width:100%;max-width:850px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+    border-radius:22px;padding:24px 18px;margin-bottom:10px}
+  .line-title{font-size:20px;font-weight:800;margin-bottom:12px;color:#ffe88f}
+  .map-svg{width:100%;height:auto;display:block}
+  .station{cursor:pointer}
+  .station circle{transition:all .15s}
+  .station:hover circle{stroke-width:8;filter:drop-shadow(0 0 10px rgba(255,217,61,.6))}
+  .plane-card{display:flex;align-items:center;gap:16px;background:linear-gradient(165deg,rgba(255,138,179,.15),rgba(255,138,179,.05));
+    border:1px solid rgba(255,138,179,.3);border-radius:18px;padding:18px 22px;text-decoration:none;color:#fff;
+    transition:transform .15s}
+  .plane-card:hover{transform:translateY(-3px)}
+  .plane-card .emoji{font-size:48px}
+  .plane-card h2{font-size:20px;margin-bottom:4px}
+  .plane-card p{font-size:13px;color:#c4d2ec}
+  .plane-card .playbtn{margin-left:auto;width:auto;padding:12px 28px}
 </style>
 </head>
 <body>
@@ -79,85 +95,64 @@
   <div class="logo">🦆</div>
   <h1>오리 서바이벌 월드투어</h1>
   <div class="sub">여행지를 선택하고 좀비 오리들로부터 살아남아라!</div>
-  <div class="cards">
-    <a class="card" href="duck.html">
-      <div class="emoji">🦆</div>
-      <h2>기본오리</h2>
-      <span class="tag">기본 아레나</span>
-      <p>모든 것이 시작된 곳.<br>좀비 오리 무리가 몰려오는<br>아레나에서 끝까지 버텨라!</p>
-      <ul>
-        <li>🔫 무기 6종 · 90초 보스 거위</li>
-        <li>🌽 옥수수 회복 · 🧲 자석 픽업</li>
-      </ul>
-      <span class="playbtn">▶ 플레이</span>
-    </a>
-    <a class="card fukuoka" href="fukuoka.html">
-      <div class="emoji">🗾</div>
-      <h2>후쿠오카</h2>
-      <span class="tag">일본 여행</span>
-      <p>후쿠오카 명소 10곳을 누비며<br>신칸센도 타고, 고쿠라성도 지키는<br>일본 여행 서바이벌!</p>
-      <ul>
-        <li>🚄 신칸센 탑승 · 🏯 고쿠라성 방어</li>
-        <li>🏆 타임어택 · 🇯🇵 한/일 지원</li>
-      </ul>
-      <span class="playbtn">▶ 플레이</span>
-    </a>
-    <a class="card daegu" href="daegu.html">
-      <div class="emoji">🏙️</div>
-      <h2>대구</h2>
-      <span class="tag">대구 여행</span>
-      <p>팔공산 갓바위부터 동성로까지!<br>대구 명소 12곳에서 펼쳐지는<br>매콤한 서바이벌!</p>
-      <ul>
-        <li>⛰️ 대형 팔공산 · ⚾ 라이온즈파크</li>
-        <li>🔫 무기 7종 · 🥩 뭉티기 회복</li>
-      </ul>
-      <span class="playbtn">▶ 플레이</span>
-    </a>
-    <a class="card daejeon" href="daejeon.html">
-      <div class="emoji">🚂</div>
-      <h2>대전</h2>
-      <span class="tag">대전 여행</span>
-      <p>꿈돌이와 함께하는 과학도시!<br>성심당 빵도 먹고, 이글스파크에서<br>홈런도 날리는 대전 여행!</p>
-      <ul>
-        <li>🦫 거대 꿈돌이 · 🍞 성심당</li>
-        <li>⚾ 이글스파크 · 🚂 KTX</li>
-      </ul>
-      <span class="playbtn">▶ 플레이</span>
-    </a>
-    <a class="card jamsil" href="jamsil.html">
-      <div class="emoji">🗼</div>
-      <h2>잠실</h2>
-      <span class="tag">잠실 여행</span>
-      <p>123층 롯데월드타워!<br>롯데월드에서 놀고, 석촌호수에서<br>힐링하는 잠실 여행!</p>
-      <ul>
-        <li>🗼 롯데월드타워 · 🎡 롯데월드</li>
-        <li>🌊 석촌호수 · ⚾ 잠실야구장</li>
-      </ul>
-      <span class="playbtn">▶ 플레이</span>
-    </a>
-    <a class="card chuncheon" href="chuncheon.html">
-      <div class="emoji">🍗</div>
-      <h2>춘천</h2>
-      <span class="tag">춘천 여행</span>
-      <p>닭갈비의 고향!<br>남이섬에서 힐링하고, 소양강에서<br>레고도 쌓는 춘천 여행!</p>
-      <ul>
-        <li>🏝️ 남이섬 · 🍗 닭갈비</li>
-        <li>🍜 막국수 · 🧱 레고랜드</li>
-      </ul>
-      <span class="playbtn">▶ 플레이</span>
-    </a>
-    <a class="card jinju" href="jinju.html">
-      <div class="emoji">🏮</div>
-      <h2>진주</h2>
-      <span class="tag">진주 여행</span>
-      <p>유등축제의 빛나는 밤!<br>진주냉면 먹고, 진주성에서<br>의기를 다지는 진주 여행!</p>
-      <ul>
-        <li>🏮 유등축제 · 🏯 진주성</li>
-        <li>🍜 진주냉면 · 🥩 수육갈비</li>
-      </ul>
-      <span class="playbtn">▶ 플레이</span>
-    </a>
+  <div class="railmap">
+    <div class="line-title">🚂 국내 여행은 기차로!</div>
+    <svg viewBox="0 0 800 420" class="map-svg">
+      <!-- 경부선 (파랑) -->
+      <line x1="100" y1="120" x2="700" y2="120" stroke="#3a8ad8" stroke-width="10" stroke-linecap="round"/>
+      <text x="100" y="95" fill="#3a8ad8" font-size="18" font-weight="800">🚄 경부선</text>
+      <!-- 경춘선 (청록) -->
+      <line x1="100" y1="120" x2="100" y2="320" stroke="#2ac8a8" stroke-width="10" stroke-linecap="round"/>
+      <line x1="100" y1="320" x2="500" y2="320" stroke="#2ac8a8" stroke-width="10" stroke-linecap="round"/>
+      <text x="110" y="310" fill="#2ac8a8" font-size="18" font-weight="800">🚃 경춘선</text>
+      <!-- 진주선 (주황, 경전선) -->
+      <line x1="400" y1="120" x2="400" y2="280" stroke="#f0a020" stroke-width="10" stroke-linecap="round"/>
+      <line x1="400" y1="280" x2="650" y2="280" stroke="#f0a020" stroke-width="10" stroke-linecap="round"/>
+      <text x="410" y="270" fill="#f0a020" font-size="18" font-weight="800">🚂 경전선</text>
 
+      <!-- 서울 (출발) -->
+      <a href="duck.html"><g class="station">
+        <circle cx="100" cy="120" r="22" fill="#fff" stroke="#ffd93d" stroke-width="5"/>
+        <text x="100" y="128" text-anchor="middle" font-size="20">🦆</text>
+        <text x="100" y="165" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">서울 · 기본오리</text>
+      </g></a>
+      <!-- 대전 (경부선) -->
+      <a href="daejeon.html"><g class="station">
+        <circle cx="300" cy="120" r="22" fill="#fff" stroke="#3a8ad8" stroke-width="5"/>
+        <text x="300" y="128" text-anchor="middle" font-size="20">🚂</text>
+        <text x="300" y="165" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">대전</text>
+      </g></a>
+      <!-- 대구 (경부선) -->
+      <a href="daegu.html"><g class="station">
+        <circle cx="550" cy="120" r="22" fill="#fff" stroke="#3a8ad8" stroke-width="5"/>
+        <text x="550" y="128" text-anchor="middle" font-size="20">🏙️</text>
+        <text x="550" y="165" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">대구</text>
+      </g></a>
+      <!-- 잠실 (경부선 종점 근처) -->
+      <a href="jamsil.html"><g class="station">
+        <circle cx="700" cy="120" r="22" fill="#fff" stroke="#3a8ad8" stroke-width="5"/>
+        <text x="700" y="128" text-anchor="middle" font-size="20">🗼</text>
+        <text x="700" y="165" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">잠실</text>
+      </g></a>
+      <!-- 춘천 (경춘선) -->
+      <a href="chuncheon.html"><g class="station">
+        <circle cx="500" cy="320" r="22" fill="#fff" stroke="#2ac8a8" stroke-width="5"/>
+        <text x="500" y="328" text-anchor="middle" font-size="20">🍗</text>
+        <text x="500" y="365" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">춘천</text>
+      </g></a>
+      <!-- 진주 (경전선) -->
+      <a href="jinju.html"><g class="station">
+        <circle cx="650" cy="280" r="22" fill="#fff" stroke="#f0a020" stroke-width="5"/>
+        <text x="650" y="288" text-anchor="middle" font-size="20">🏮</text>
+        <text x="650" y="325" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">진주</text>
+      </g></a>
+    </svg>
+    <div class="line-title" style="margin-top:10px">✈️ 해외 여행은 비행기로!</div>
+    <a class="plane-card" href="fukuoka.html">
+      <div class="emoji">🗾</div>
+      <div><h2>후쿠오카</h2><p>비행기 타고 일본으로! ✈️</p></div>
+      <span class="playbtn">▶ 탑승</span>
+    </a>
   </div>
   <div class="tip">
     📱 <b>폰에서 가로 전체화면으로 즐기기:</b><br>
