@@ -68,6 +68,7 @@
   .stat .v{font-size:22px;font-weight:900;color:#ffe88f}
   .stat .k{font-size:12px;color:#aeb8d8;margin-top:2px}
   #best-line{margin-top:10px;font-size:13px;color:#8f9ac0}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 </style>
 </head>
 <body>
@@ -92,6 +93,7 @@
 
   <div class="ov" id="ov-title"><div class="card">
     <img class="titleart" id="title-img" alt="후더덕 서바이벌">
+    <img id="t-kkumdori" src="data:image/jpeg;base64,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" alt="꿈돌이" style="width:120px;height:120px;object-fit:contain;animation:bob 2.4s ease-in-out infinite;filter:drop-shadow(0 8px 16px rgba(0,0,0,.4))">
     <h1 id="t-title">대전 서바이벌</h1>
     <p class="sub" id="t-sub">좀비 비둘기 무리가 몰려온다!<br>후더덕과 함께 대전 여행에서 살아남아라 🦆🍗</p>
     <div class="howto" id="t-howto">
@@ -296,57 +298,57 @@ const LANDMARKS=[
 
 /* ===== 대전 랜드마크 ===== */
 function drawKkumdori(px,py,t){
-  // 거대 꿈돌이 마스코트 (대전의 상징)
+  // 진짜 꿈돌이 (베이지색 둥근 마스코트, 파란 별 안테나)
   ctx.save();ctx.translate(px,py);
-  // 그림자
-  ctx.fillStyle='rgba(0,0,0,.18)';
-  ctx.beginPath();ctx.ellipse(0,95,150,28,0,0,TAU);ctx.fill();
-  // 몸통 (둥글고 귀여운)
-  const bob=Math.sin(t/300)*6;
-  ctx.fillStyle=gradC(0,0,20,120,'#7ec8f7','#3d9be0');
-  ctx.beginPath();ctx.arc(0,bob,110,0,TAU);ctx.fill();
-  ctx.strokeStyle='#fff';ctx.lineWidth=8;
-  ctx.beginPath();ctx.arc(0,bob,110,0,TAU);ctx.stroke();
-  // 배 (흰색)
-  ctx.fillStyle='#fff';
-  ctx.beginPath();ctx.ellipse(0,40+bob,62,48,0,0,TAU);ctx.fill();
-  // 귀 (둥근)
-  ctx.fillStyle='#3d9be0';
-  ctx.beginPath();ctx.arc(-72,-72+bob,28,0,TAU);ctx.fill();
-  ctx.beginPath();ctx.arc(72,-72+bob,28,0,TAU);ctx.fill();
-  ctx.fillStyle='#7ec8f7';
-  ctx.beginPath();ctx.arc(-72,-72+bob,14,0,TAU);ctx.fill();
-  ctx.beginPath();ctx.arc(72,-72+bob,14,0,TAU);ctx.fill();
-  // 얼굴
-  ctx.fillStyle='#222';
-  ctx.beginPath();ctx.arc(-34,-18+bob,11,0,TAU);ctx.fill();
-  ctx.beginPath();ctx.arc(34,-18+bob,11,0,TAU);ctx.fill();
-  ctx.fillStyle='#fff';
-  ctx.beginPath();ctx.arc(-31,-21+bob,3.5,0,TAU);ctx.fill();
-  ctx.beginPath();ctx.arc(37,-21+bob,3.5,0,TAU);ctx.fill();
-  // 볼터치
-  ctx.fillStyle='rgba(255,150,180,.6)';
-  ctx.beginPath();ctx.arc(-58,2+bob,13,0,TAU);ctx.fill();
-  ctx.beginPath();ctx.arc(58,2+bob,13,0,TAU);ctx.fill();
-  // 미소
-  ctx.strokeStyle='#222';ctx.lineWidth=5;ctx.lineCap='round';
-  ctx.beginPath();ctx.arc(0,8+bob,26,0.4,Math.PI-0.4);ctx.stroke();
-  // 머리 위 별 장식
-  ctx.save();ctx.translate(0,-118+bob);ctx.rotate(Math.sin(t/400)*0.2);
-  ctx.fillStyle='#ffd93d';
+  ctx.fillStyle='rgba(0,0,0,.16)';
+  ctx.beginPath();ctx.ellipse(0,100,120,26,0,0,TAU);ctx.fill();
+  const bob=Math.sin(t/300)*7;
+  // 안테나 (가는 검은 줄 + 파란 별)
+  ctx.strokeStyle='#333';ctx.lineWidth=4;
+  ctx.beginPath();ctx.moveTo(0,-108+bob);
+  ctx.quadraticCurveTo(20,-140+bob,8,-168+bob);ctx.stroke();
+  ctx.save();ctx.translate(8,-178+bob);ctx.rotate(Math.sin(t/400)*0.25);
+  ctx.fillStyle='#6bb8ff';
   ctx.beginPath();
   for(let i=0;i<5;i++){
     const a=-Math.PI/2+i*TAU/5, a2=a+TAU/10;
-    ctx.lineTo(Math.cos(a)*22,Math.sin(a)*22);
-    ctx.lineTo(Math.cos(a2)*9,Math.sin(a2)*9);
+    ctx.lineTo(Math.cos(a)*20,Math.sin(a)*20);
+    ctx.lineTo(Math.cos(a2)*8.5,Math.sin(a2)*8.5);
   }
   ctx.closePath();ctx.fill();
+  ctx.strokeStyle='#4a90d9';ctx.lineWidth=2.5;ctx.stroke();
   ctx.restore();
+  // 귀 (작고 둥근)
+  ctx.fillStyle='#f5d7a8';
+  ctx.beginPath();ctx.ellipse(-88,-52+bob,20,30,-0.35,0,TAU);ctx.fill();
+  ctx.beginPath();ctx.ellipse(88,-52+bob,20,30,0.35,0,TAU);ctx.fill();
+  // 몸통 (베이지색 둥근 감자 모양)
+  ctx.fillStyle=gradC(0,-10,15,110,'#ffe3b3','#f5c98a');
+  ctx.beginPath();ctx.ellipse(0,-10+bob,95,105,0,0,TAU);ctx.fill();
+  ctx.strokeStyle='#fff';ctx.lineWidth=7;
+  ctx.beginPath();ctx.ellipse(0,-10+bob,95,105,0,0,TAU);ctx.stroke();
+  // 팔 (짧고 통통)
+  ctx.fillStyle='#f5c98a';
+  ctx.save();ctx.translate(-88,10+bob);ctx.rotate(0.5+Math.sin(t/350)*0.15);
+  ctx.beginPath();ctx.ellipse(0,0,18,32,0,0,TAU);ctx.fill();ctx.restore();
+  ctx.save();ctx.translate(88,10+bob);ctx.rotate(-0.5-Math.sin(t/350)*0.15);
+  ctx.beginPath();ctx.ellipse(0,0,18,32,0,0,TAU);ctx.fill();ctx.restore();
+  // 다리 (짧은)
+  ctx.beginPath();ctx.ellipse(-36,88+bob,26,20,0,0,TAU);ctx.fill();
+  ctx.beginPath();ctx.ellipse(36,88+bob,26,20,0,0,TAU);ctx.fill();
+  // 눈 (세로 타원, 검은색)
+  ctx.fillStyle='#222';
+  ctx.beginPath();ctx.ellipse(-30,-42+bob,8,15,0,0,TAU);ctx.fill();
+  ctx.beginPath();ctx.ellipse(30,-42+bob,8,15,0,0,TAU);ctx.fill();
+  // 볼터치 (분홍)
+  ctx.fillStyle='rgba(255,150,150,.55)';
+  ctx.beginPath();ctx.arc(-56,-22+bob,16,0,TAU);ctx.fill();
+  ctx.beginPath();ctx.arc(56,-22+bob,16,0,TAU);ctx.fill();
   // 팻말
-  ctx.fillStyle='#fff';RR(-90,118,180,44,22);ctx.fill();
-  ctx.strokeStyle='#3d9be0';ctx.lineWidth=4;RR(-90,118,180,44,22);ctx.stroke();
-  ctx.fillStyle='#3d9be0';ctx.font='bold 24px sans-serif';ctx.textAlign='center';
-  ctx.fillText('🦫 꿈돌이',0,148);
+  ctx.fillStyle='#fff';RR(-90,122,180,44,22);ctx.fill();
+  ctx.strokeStyle='#f5b942';ctx.lineWidth=4;RR(-90,122,180,44,22);ctx.stroke();
+  ctx.fillStyle='#d99a2b';ctx.font='bold 24px sans-serif';ctx.textAlign='center';
+  ctx.fillText('🦫 꿈돌이',0,152);
   ctx.restore();
 }
 function drawEaglesPark(px,py,t){
@@ -1535,7 +1537,7 @@ let magnetAll=0;
 const WEAPONS={
   quack:  {name:'튀김소보로',icon:'🍞',max:5,desc:'성심당 소보로 자동 사격',nja:'大邱マクチャン砲',dja:'マクチャンを自動射撃'},
   meteor: {name:'홈런포',icon:'⚾',max:5,desc:'이글스 홈런포 폭탄 낙하',nja:'ペッタンマンドゥストライク',dja:'ペッタンマンドゥ爆弾が落下'},
-  lightning:{name:'KTX 스파크',icon:'🚄',max:5,desc:'전차 스파크가 적 사이를 튐',nja:'KTXスパーク',dja:'電車のスパークが敵の間を飛ぶ'},
+  lightning:{name:'대전역 스파크',icon:'🚂',max:5,desc:'대전역 전차 스파크가 적 사이를 튐',nja:'KTXスパーク',dja:'電車のスパークが敵の間を飛ぶ'},
   orbit:  {name:'꿈돌이 궤도',icon:'🦫',max:5,desc:'꿈돌이가 빙글빙글',nja:'軌道薬令丸',dja:'薬令市の漢方丸がぐるぐる'},
   frost:  {name:'온천 스팀',icon:'♨️',max:5,desc:'유성온천 스팀 폭발 + 감속',nja:'寿城池かき氷',dja:'かき氷爆発で凍結+減速'},
   laser:  {name:'엑스포 레이저',icon:'🔬',max:5,desc:'과학의 레이저',nja:'石仏レーザー',dja:'願い事のレーザー'},
