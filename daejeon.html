@@ -582,8 +582,8 @@ function drawOnsen(px,py,t){
   ctx.fillText('♨️ 유성온천',0,107);
   ctx.restore();
 }
-function drawHanbat(px,py,t){
-  // 한밭수목원
+function drawHanbat(px,py,t,label){
+  // 수목원/공원 (라벨 파라미터)
   ctx.save();ctx.translate(px,py);
   // 나무들
   const trees=[[-80,0,1],[0,-20,1.3],[80,0,1],[-40,30,0.8],[40,30,0.8]];
@@ -607,11 +607,11 @@ function drawHanbat(px,py,t){
   ctx.fillStyle='#fff';RR(-90,90,180,40,20);ctx.fill();
   ctx.strokeStyle='#4a9a4a';ctx.lineWidth=4;RR(-90,90,180,40,20);ctx.stroke();
   ctx.fillStyle='#2e7e2e';ctx.font='bold 20px sans-serif';ctx.textAlign='center';
-  ctx.fillText('🌳 한밭수목원',0,117);
+  ctx.fillText(label||'🌳 한밭수목원',0,117);
   ctx.restore();
 }
-function drawExpoBridge(px,py){
-  // 엑스포다리
+function drawExpoBridge(px,py,label){
+  // 다리 (라벨 파라미터)
   ctx.save();ctx.translate(px,py);
   // 강
   ctx.fillStyle=gradC(0,40,10,100,'#7ec8f7','#4a9ac2');
@@ -641,7 +641,7 @@ function drawExpoBridge(px,py){
   ctx.fillStyle='#fff';RR(-90,95,180,40,20);ctx.fill();
   ctx.strokeStyle='#ff6b9d';ctx.lineWidth=4;RR(-90,95,180,40,20);ctx.stroke();
   ctx.fillStyle='#c24a7a';ctx.font='bold 20px sans-serif';ctx.textAlign='center';
-  ctx.fillText('🌉 엑스포다리',0,122);
+  ctx.fillText(label||'🌉 엑스포다리',0,122);
   ctx.restore();
 }
 
@@ -978,8 +978,8 @@ function drawGround(camX,camY,t){
     else if(L.f==='dunsan')drawStreet(lx,ly);
     else if(L.f==='kkumdori')drawKkumdori(lx,ly,t);
     else if(L.f==='expo')drawExpo(lx,ly,t);
-    else if(L.f==='hanbat')drawHanbat(lx,ly,t);
-    else if(L.f==='expobridge')drawExpoBridge(lx,ly);
+    else if(L.f==='hanbat')drawHanbat(lx,ly,t,'🌳 한밭수목원');
+    else if(L.f==='expobridge')drawExpoBridge(lx,ly,'🌉 엑스포다리');
     else if(L.f==='kyowondae')drawSchool(lx,ly);
     else if(L.f==='hanbit')drawTower(lx,ly);
     else if(L.f==='yuseong')drawOnsen(lx,ly,t);

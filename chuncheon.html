@@ -507,8 +507,8 @@ function drawLegoland(px,py,t){
   ctx.fillText('🧱 레고랜드',0,133);
   ctx.restore();
 }
-function drawHanbat(px,py,t){
-  // 한밭수목원
+function drawHanbat(px,py,t,label){
+  // 수목원/공원 (라벨 파라미터)
   ctx.save();ctx.translate(px,py);
   // 나무들
   const trees=[[-80,0,1],[0,-20,1.3],[80,0,1],[-40,30,0.8],[40,30,0.8]];
@@ -532,11 +532,11 @@ function drawHanbat(px,py,t){
   ctx.fillStyle='#fff';RR(-90,90,180,40,20);ctx.fill();
   ctx.strokeStyle='#4a9a4a';ctx.lineWidth=4;RR(-90,90,180,40,20);ctx.stroke();
   ctx.fillStyle='#2e7e2e';ctx.font='bold 20px sans-serif';ctx.textAlign='center';
-  ctx.fillText('🌳 한밭수목원',0,117);
+  ctx.fillText(label||'🌳 공원',0,117);
   ctx.restore();
 }
-function drawExpoBridge(px,py){
-  // 진주대교 (재사용)
+function drawExpoBridge(px,py,label){
+  // 다리 (라벨 파라미터)
   ctx.save();ctx.translate(px,py);
   // 강
   ctx.fillStyle=gradC(0,40,10,100,'#7ec8f7','#4a9ac2');
@@ -566,7 +566,7 @@ function drawExpoBridge(px,py){
   ctx.fillStyle='#fff';RR(-90,95,180,40,20);ctx.fill();
   ctx.strokeStyle='#ff6b9d';ctx.lineWidth=4;RR(-90,95,180,40,20);ctx.stroke();
   ctx.fillStyle='#c24a7a';ctx.font='bold 20px sans-serif';ctx.textAlign='center';
-  ctx.fillText('🌉 진주대교',0,122);
+  ctx.fillText(label||'🌉 다리',0,122);
   ctx.restore();
 }
 
@@ -901,10 +901,11 @@ function drawGround(camX,camY,t){
     if(L.f==='daecheong')drawOhori(lx,ly,t);
     else if(L.f==='makguksu')drawMakguksu(lx,ly,t);
     else if(L.f==='market')drawStreet(lx,ly);
+    else if(L.f==='skywalk')drawExpoBridge(lx,ly,'🌉 소양강 스카이워크');
     else if(L.f==='nami')drawNami(lx,ly,t);
     else if(L.f==='knu')drawSchool(lx,ly);
     else if(L.f==='uiamho')drawOhori(lx,ly,t);
-    else if(L.f==='gongjicheon')drawHanbat(lx,ly,t);
+    else if(L.f==='gongjicheon')drawHanbat(lx,ly,t,'🌳 공지천');
     else if(L.f==='samaksan')drawPalgongsan(lx,ly,t);
     else if(L.f==='kimyujeong')drawStation(lx,ly);
     else if(L.f==='legoland')drawLegoland(lx,ly,t);
