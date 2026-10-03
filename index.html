@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>🦆 오리 서바이벌 월드투어</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+    background:radial-gradient(1200px 800px at 50% -10%,#1b2a4a 0%,#0d1526 55%,#070c16 100%);
+    color:#fff;min-height:100%;display:flex;flex-direction:column;align-items:center;
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    overflow-x:hidden;
+  }
+  .stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+  .wrap{position:relative;z-index:1;width:100%;max-width:1100px;padding:28px 18px 40px;display:flex;flex-direction:column;align-items:center}
+  .logo{font-size:64px;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-10px) rotate(4deg)}}
+  h1{font-size:clamp(26px,5vw,44px);font-weight:900;margin:10px 0 4px;letter-spacing:-1px;
+     background:linear-gradient(180deg,#ffe88f,#ffb13d);-webkit-background-clip:text;background-clip:text;color:transparent;
+     text-shadow:0 4px 24px rgba(255,177,61,.25)}
+  .sub{color:#9fb3d9;font-size:clamp(13px,2.4vw,17px);margin-bottom:26px}
+  .cards{display:flex;gap:18px;width:100%;justify-content:center;flex-wrap:wrap}
+  .card{
+    flex:1 1 280px;max-width:330px;background:linear-gradient(165deg,rgba(255,255,255,.09),rgba(255,255,255,.03));
+    border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:26px 22px 24px;
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+    cursor:pointer;text-decoration:none;color:#fff;
+  }
+  .card:hover,.card:active{transform:translateY(-6px) scale(1.02);border-color:rgba(255,217,61,.55);
+    box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 0 1px rgba(255,217,61,.25)}
+  .card .emoji{font-size:58px;margin-bottom:10px;filter:drop-shadow(0 6px 12px rgba(0,0,0,.4))}
+  .card h2{font-size:22px;font-weight:800;margin-bottom:6px}
+  .card .tag{display:inline-block;font-size:12px;font-weight:700;color:#0d1526;background:#ffd93d;
+    border-radius:20px;padding:3px 12px;margin-bottom:12px}
+  .card.fukuoka .tag{background:#ff8ab3}
+  .card.daegu .tag{background:#7fd4ff}
+  .card p{font-size:13.5px;line-height:1.65;color:#c4d2ec;min-height:66px}
+  .card ul{list-style:none;margin:12px 0 18px;font-size:12.5px;color:#8fa3c8;line-height:1.9}
+  .playbtn{
+    display:block;text-align:center;margin-top:auto;width:100%;padding:14px;border:none;border-radius:14px;cursor:pointer;
+    font-size:17px;font-weight:900;color:#0d1526;
+    background:linear-gradient(180deg,#ffe88f,#ffb13d);box-shadow:0 6px 0 #b87a1a,0 10px 22px rgba(0,0,0,.35);
+    transition:transform .1s;
+  }
+  .playbtn:active{transform:translateY(4px);box-shadow:0 2px 0 #b87a1a}
+  .tip{margin-top:30px;max-width:640px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+    border-radius:16px;padding:16px 20px;font-size:13px;line-height:1.8;color:#9fb3d9}
+  .tip b{color:#ffe88f}
+  footer{margin-top:18px;color:#5a6c8f;font-size:12px}
+  @media (orientation:landscape) and (max-height:500px){
+    .logo{font-size:40px}h1{font-size:26px}.sub{margin-bottom:14px}
+    .card{padding:16px}.card .emoji{font-size:40px}.card p{min-height:0}
+  }
+</style>
+</head>
+<body>
+<canvas class="stars" id="stars"></canvas>
+<div class="wrap">
+  <div class="logo">🦆</div>
+  <h1>오리 서바이벌 월드투어</h1>
+  <div class="sub">여행지를 선택하고 좀비 오리들로부터 살아남아라!</div>
+  <div class="cards">
+    <a class="card" href="duck.html">
+      <div class="emoji">🦆</div>
+      <h2>기본오리</h2>
+      <span class="tag">기본 아레나</span>
+      <p>모든 것이 시작된 곳.<br>좀비 오리 무리가 몰려오는<br>아레나에서 끝까지 버텨라!</p>
+      <ul>
+        <li>🔫 무기 6종 · 90초 보스 거위</li>
+        <li>🌽 옥수수 회복 · 🧲 자석 픽업</li>
+      </ul>
+      <span class="playbtn">▶ 플레이</span>
+    </a>
+    <a class="card fukuoka" href="fukuoka.html">
+      <div class="emoji">🗾</div>
+      <h2>후쿠오카</h2>
+      <span class="tag">일본 여행</span>
+      <p>후쿠오카 명소 10곳을 누비며<br>신칸센도 타고, 고쿠라성도 지키는<br>일본 여행 서바이벌!</p>
+      <ul>
+        <li>🚄 신칸센 탑승 · 🏯 고쿠라성 방어</li>
+        <li>🏆 타임어택 · 🇯🇵 한/일 지원</li>
+      </ul>
+      <span class="playbtn">▶ 플레이</span>
+    </a>
+    <a class="card daegu" href="daegu.html">
+      <div class="emoji">🏙️</div>
+      <h2>대구</h2>
+      <span class="tag">대구 여행</span>
+      <p>팔공산 갓바위부터 동성로까지!<br>대구 명소 12곳에서 펼쳐지는<br>매콤한 서바이벌!</p>
+      <ul>
+        <li>⛰️ 대형 팔공산 · ⚾ 라이온즈파크</li>
+        <li>🔫 무기 7종 · 🥩 뭉티기 회복</li>
+      </ul>
+      <span class="playbtn">▶ 플레이</span>
+    </a>
+  </div>
+  <div class="tip">
+    📱 <b>아이폰에서 전체화면이 안 될 때:</b> 아이폰 Safari는 전체화면 API를 지원하지 않아요.
+    게임을 홈 화면에 추가하면(공유 → 홈 화면에 추가) 앱처럼 전체화면으로 실행됩니다.
+    가로로 돌려서 플레이하는 것을 추천합니다! 🔄
+  </div>
+  <footer>🦆 Duck Travel Survival · made with Muse</footer>
+</div>
+<script>
+// 반짝이는 별 배경
+const c=document.getElementById('stars'),x=c.getContext('2d');
+function size(){c.width=innerWidth;c.height=innerHeight}
+size();addEventListener('resize',size);
+const st=Array.from({length:90},()=>({x:Math.random(),y:Math.random(),r:Math.random()*1.6+.4,p:Math.random()*6.28}));
+(function loop(t){
+  x.clearRect(0,0,c.width,c.height);
+  for(const s of st){
+    x.globalAlpha=.25+.55*Math.abs(Math.sin(t/1400+s.p));
+    x.fillStyle='#fff';x.beginPath();x.arc(s.x*c.width,s.y*c.height,s.r,0,6.29);x.fill();
+  }
+  x.globalAlpha=1;requestAnimationFrame(loop);
+})(0);
+</script>
+</body>
+</html>
