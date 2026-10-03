@@ -1,0 +1,15 @@
+{
+  "name": "오리 서바이벌 월드투어",
+  "short_name": "오리서바이벌",
+  "description": "후더덕과 함께하는 세계 여행 서바이벌!",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
+  "lang": "ko",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}

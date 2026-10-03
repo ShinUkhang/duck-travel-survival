@@ -83,7 +83,7 @@
     <div class="pill" id="h-score" style="display:none;color:#ffd93d">⭐ 0</div>
     <div class="pill" id="h-cat" style="display:none">🐱 0/10</div>
     <div id="wicons"></div>
-    <button id="btn-hub" title="여행지 선택">🗺️</button><button id="btn-pause">⏸</button>
+    <button id="btn-full" title="전체화면">⛶</button><button id="btn-hub" title="여행지 선택">🗺️</button><button id="btn-pause">⏸</button>
     <button id="btn-fs" title="전체화면">⛶</button>
   </div></div>
   <div id="wave-banner"><span id="wave-text"></span></div>
@@ -2414,6 +2414,7 @@ $('btn-start-ta').onclick=()=>{beep(520,0.1,'square',0.05);startGame('timeattack
 $('btn-start-sv').onclick=()=>{beep(520,0.1,'square',0.05);startGame('survival');};
 $('btn-again').onclick=()=>{startGame();};
 $('btn-hub').onclick=()=>{location.href='index.html';};
+$('btn-full').onclick=toggleFullscreen;
 $('btn-pause').onclick=()=>togglePause();
 $('btn-fs').onclick=()=>toggleFS();
 function toggleFS(){
@@ -2452,6 +2453,19 @@ function loop(ts){
 }
 showIntro();
 requestAnimationFrame(loop);
+
+function toggleFullscreen(){
+  const el=document.documentElement;
+  if(!document.fullscreenElement&&!document.webkitFullscreenElement){
+    if(el.requestFullscreen)el.requestFullscreen().catch(()=>{});
+    else if(el.webkitRequestFullscreen)el.webkitRequestFullscreen();
+    // 가로모드 잠금 시도 (안드로이드)
+    if(screen.orientation&&screen.orientation.lock)screen.orientation.lock('landscape').catch(()=>{});
+  }else{
+    if(document.exitFullscreen)document.exitFullscreen();
+    else if(document.webkitExitFullscreen)document.webkitExitFullscreen();
+  }
+}
 </script>
 </body>
 </html>

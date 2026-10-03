@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="manifest" href="manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0b1020">
 <title>후더덕 서바이벌</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -21,6 +26,7 @@
   #wicons{display:flex;gap:6px}
   .wicon{width:34px;height:34px;border-radius:10px;background:rgba(10,14,28,.72);border:1px solid rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:18px;position:relative}
   .wicon b{position:absolute;bottom:-4px;right:-4px;background:#ffb020;color:#3a2200;font-size:10px;font-weight:900;border-radius:6px;padding:0 4px}
+  #btn-full{pointer-events:auto;cursor:pointer;border:1px solid rgba(255,255,255,.2);background:rgba(10,14,28,.72);color:#fff;border-radius:10px;width:36px;height:36px;font-size:17px;margin-right:6px}
   #btn-hub{pointer-events:auto;cursor:pointer;border:1px solid rgba(255,255,255,.2);background:rgba(10,14,28,.72);color:#fff;border-radius:10px;width:36px;height:36px;font-size:17px;margin-right:6px}
   #btn-pause{pointer-events:auto;cursor:pointer;border:1px solid rgba(255,255,255,.2);background:rgba(10,14,28,.72);color:#fff;border-radius:10px;width:36px;height:36px;font-size:17px}
   /* overlays */
@@ -64,7 +70,7 @@
     <div class="pill" id="h-kill">☠️ 0</div>
     <div class="pill" id="h-lv">Lv 1</div>
     <div id="wicons"></div>
-    <button id="btn-hub" title="여행지 선택">🗺️</button><button id="btn-pause">⏸</button>
+    <button id="btn-full" title="전체화면">⛶</button><button id="btn-hub" title="여행지 선택">🗺️</button><button id="btn-pause">⏸</button>
   </div></div>
   <div id="wave-banner"><span id="wave-text"></span></div>
   <div id="joy"></div>
@@ -991,6 +997,7 @@ function togglePause(){
 $('btn-start').onclick=()=>{beep(520,0.1,'square',0.05);startGame();};
 $('btn-again').onclick=()=>{startGame();};
 $('btn-hub').onclick=()=>{location.href='index.html';};
+$('btn-full').onclick=toggleFullscreen;
 $('btn-pause').onclick=()=>togglePause();
 $('btn-resume').onclick=()=>togglePause();
 $('btn-gohub').onclick=()=>{location.href='index.html';};
@@ -1011,6 +1018,19 @@ function loop(ts){
 }
 showTitle();
 requestAnimationFrame(loop);
+
+function toggleFullscreen(){
+  const el=document.documentElement;
+  if(!document.fullscreenElement&&!document.webkitFullscreenElement){
+    if(el.requestFullscreen)el.requestFullscreen().catch(()=>{});
+    else if(el.webkitRequestFullscreen)el.webkitRequestFullscreen();
+    // 가로모드 잠금 시도 (안드로이드)
+    if(screen.orientation&&screen.orientation.lock)screen.orientation.lock('landscape').catch(()=>{});
+  }else{
+    if(document.exitFullscreen)document.exitFullscreen();
+    else if(document.webkitExitFullscreen)document.webkitExitFullscreen();
+  }
+}
 </script>
 </body>
 </html>
